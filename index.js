@@ -1,10 +1,9 @@
 (async () => {
-  const keccak = require('keccak')
   const Web3 = require('web3')
   const Tx = require('ethereumjs-tx').Transaction
 
   const web3 = new Web3(new Web3.providers.HttpProvider(process.env.WEB3_PROVIDER))
-  const { toBN, toHex } = web3.utils
+  const { toHex } = web3.utils
 
   const privateKey = Buffer.from(process.env.PRIVATE_KEY, 'hex')
   const from = web3.eth.accounts.privateKeyToAccount(`0x${process.env.PRIVATE_KEY}`).address
